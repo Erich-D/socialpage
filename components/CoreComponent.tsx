@@ -1,4 +1,4 @@
-import {View, ScrollView, Image, Text, StyleSheet, Button, TouchableOpacity} from 'react-native';
+import {View, ScrollView, Image, Text, StyleSheet, Button, TouchableOpacity, ImageBackground} from 'react-native';
 import React, { useState } from 'react';
 import SubImage from './SubImage';
 import TextInputField from './TextInputField';
@@ -55,6 +55,7 @@ export default function CoreComponents () {
 
     return (
         <View>
+            <ImageBackground source={{uri:'https://emsubtitle.com/wp-content/uploads/2021/03/MV5BMTI3MjI1NTAtYjI2ZS00OTVlLTk0OTQtNTc5M2U3NmNmYjMzXkEyXkFqcGdeQXVyOTgwMzk1MTA@._V1_.jpg'}} resizeMode="cover" style={styles.image}>
             <View style={styles.topContainer}>
                 <View>
                     <Text style={styles.heading1}>I'm the real Superman</Text>
@@ -88,6 +89,7 @@ export default function CoreComponents () {
                     </>
                 ))}
             </ScrollView> 
+            </ImageBackground>
         </View>
     )
 }
@@ -105,12 +107,15 @@ const styles = StyleSheet.create({
         fontFamily: 'Cochin',
         fontSize: 20,
         fontWeight:'bold',
-        marginTop:30
+        marginTop:30,
+        color: 'white',
+        backgroundColor:'black'
     },
 
     topContainer:{
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
     },
 
     button:{
@@ -118,11 +123,18 @@ const styles = StyleSheet.create({
         //height:auto,
         borderRadius:5,
         borderWidth: 1,
-        fontSize: 4
+        fontSize: 4,
+        backgroundColor:"red"
     },
 
     appButtonText:{
         fontSize: 8,
         alignSelf: "center",
-    }
+        color:"white"
+    },
+
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+      },
 })

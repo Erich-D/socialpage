@@ -9,6 +9,6 @@ type TextSize = {
 export default function Heading(props:TextSize){
 
     return <>
-        <Text style={{fontSize:props.size}}>{props.txt}</Text>
+        <Text style={{fontSize:props.size, backgroundColor:"black", color:"white"}}>{props.txt}</Text>
     </>
 }

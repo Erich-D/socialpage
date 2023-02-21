@@ -13,9 +13,9 @@ export default function TextInputField(props:InputInfo) {
     const [uri, setUri] = useState<string>('');
 
     return <View>
-        <Text>{props.label1}</Text>
+        <Text style={styles.heading1}>{props.label1}</Text>
         <TextInput value = {name} onChangeText = {setName} style = {styles.input}/> 
-        <Text>{props.label2}</Text>
+        <Text style={styles.heading1}>{props.label2}</Text>
         <TextInput value = {uri} onChangeText = {setUri} style = {styles.input}/>
         <Button onPress={addProps} title={`Seal ${name}'s Doom!`}/>
     </View>
@@ -34,6 +34,16 @@ const styles = StyleSheet.create({
     input : {
         borderWidth: 1,
         width: 200,
-        margin: 'auto'
-    }
+        margin: 'auto',
+        backgroundColor:"white"
+    },
+
+    heading1:{
+        //fontFamily: 'Cochin',
+        //fontSize: 20,
+        //fontWeight:'bold',
+       // marginTop:30,
+        color: 'white',
+        backgroundColor:'black'
+    },
 })
